@@ -1,0 +1,136 @@
+package com.caleb.screens;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
+import com.caleb.gspikes.GravitySpikesRevamped;
+
+public class GameOverScreen implements Screen {
+
+	private static final int TITLE_WIDTH = 240;
+	private static final int TITLE_HEIGHT = 240;
+
+	private static final int PLAY_WIDTH = 200;
+	private static final int PLAY_HEIGHT = 100;
+
+	private static final int TITLE_Y = 400;
+	private static final int PLAY_Y = 150;
+
+	private GravitySpikesRevamped game;
+	private Texture deadTitle;
+	private Texture gameOverScreen;
+	private Texture playAgainActive;
+	private Texture playAgainInactive;
+	private Viewport gamePort;
+	private Stage stage;
+
+	public GameOverScreen(GravitySpikesRevamped game) {
+		this.game = game;
+
+		deadTitle = new Texture("DeadTitle.png");
+		gameOverScreen = new Texture("GameOverScreen.png");
+		playAgainActive = new Texture("PlayAgainActive.png");
+		playAgainInactive = new Texture("PlayAgainInactive.png");
+
+		gamePort = new FitViewport(GravitySpikesRevamped.GAME_WIDTH / GravitySpikesRevamped.PPM,
+				GravitySpikesRevamped.GAME_HEIGHT / GravitySpikesRevamped.PPM, new OrthographicCamera());
+
+		stage = new Stage(gamePort, game.batch);
+	}
+
+	@Override
+	public void show() {
+
+	}
+
+	@Override
+	public void render(float delta) {
+		Gdx.gl.glClearColor(0, 0, 0, 0);
+		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
+		game.batch.begin();
+		game.batch.draw(gameOverScreen, 0, 0, GravitySpikesRevamped.GAME_WIDTH / GravitySpikesRevamped.PPM,
+				GravitySpikesRevamped.GAME_HEIGHT / GravitySpikesRevamped.PPM);
+
+		game.batch.draw(deadTitle,
+				GravitySpikesRevamped.GAME_WIDTH / 2 / GravitySpikesRevamped.PPM
+						- TITLE_WIDTH / 2 / GravitySpikesRevamped.PPM,
+				TITLE_Y / GravitySpikesRevamped.PPM, TITLE_WIDTH / GravitySpikesRevamped.PPM,
+				TITLE_HEIGHT / GravitySpikesRevamped.PPM);
+
+		handleInput();
+
+		game.batch.end();
+
+		stage.draw();
+	}
+
+	public void handleInput() {
+
+		int playX = GravitySpikesRevamped.GAME_WIDTH / 2 - PLAY_WIDTH / 2;
+
+		if (Gdx.input.getX() / GravitySpikesRevamped.PPM < (playX + PLAY_WIDTH) / GravitySpikesRevamped.PPM
+				&& Gdx.input.getX() / GravitySpikesRevamped.PPM > (playX) / GravitySpikesRevamped.PPM
+				&& (GravitySpikesRevamped.GAME_HEIGHT - Gdx.input.getY())
+						/ GravitySpikesRevamped.PPM < (PLAY_Y + PLAY_HEIGHT) / GravitySpikesRevamped.PPM
+				&& (GravitySpikesRevamped.GAME_HEIGHT - Gdx.input.getY()) / GravitySpikesRevamped.PPM > (PLAY_Y)
+						/ GravitySpikesRevamped.PPM) {
+
+			game.batch.draw(playAgainActive,
+					GravitySpikesRevamped.GAME_WIDTH / 2 / GravitySpikesRevamped.PPM
+							- PLAY_WIDTH / 2 / GravitySpikesRevamped.PPM,
+					PLAY_Y / GravitySpikesRevamped.PPM, PLAY_WIDTH / GravitySpikesRevamped.PPM,
+					PLAY_HEIGHT / GravitySpikesRevamped.PPM);
+
+			if (Gdx.input.isTouched()) {
+				game.setScreen(new LevelSelectScreen(game));
+			}
+		} else {
+			game.batch.draw(playAgainInactive,
+					GravitySpikesRevamped.GAME_WIDTH / 2 / GravitySpikesRevamped.PPM
+							- PLAY_WIDTH / 2 / GravitySpikesRevamped.PPM,
+					PLAY_Y / GravitySpikesRevamped.PPM, PLAY_WIDTH / GravitySpikesRevamped.PPM,
+					PLAY_HEIGHT / GravitySpikesRevamped.PPM);
+		}
+
+	}
+
+	@Override
+	public void resize(int width, int height) {
+
+		gamePort.update(width, height);
+	}
+
+	@Override
+	public void pause() {
+
+	}
+
+	@Override
+	public void resume() {
+
+	}
+
+	@Override
+	public void hide() {
+
+	}
+
+	@Override
+	public void dispose() {
+
+		game.batch.dispose();
+		game.dispose();
+		stage.dispose();
+		deadTitle.dispose();
+		gameOverScreen.dispose();
+		playAgainActive.dispose();
+		playAgainInactive.dispose();
+	}
+
+}

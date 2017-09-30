@@ -1,0 +1,5 @@
+package com.caleb.entities;
+
+public class EnterPortal {
+
+}

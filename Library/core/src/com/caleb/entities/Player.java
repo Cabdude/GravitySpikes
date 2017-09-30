@@ -1,0 +1,52 @@
+package com.caleb.entities;
+
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.physics.box2d.Body;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.CircleShape;
+import com.badlogic.gdx.physics.box2d.FixtureDef;
+import com.badlogic.gdx.physics.box2d.World;
+import com.caleb.gspikes.GravitySpikesRevamped;
+
+public class Player extends Sprite {
+
+
+	
+	public World world;
+	public Body playerBody;
+
+	public TextureRegion playerChar;
+
+	public Player(World world) {
+		super(new Texture("PlayerImage.png"));
+		this.world = world;
+		definePlayer();
+		playerChar = new TextureRegion(getTexture(), 0, 0, 128, 128);
+		setBounds(0, 0, 64 / GravitySpikesRevamped.PPM, 64 / GravitySpikesRevamped.PPM);
+		setRegion(playerChar);
+	}
+
+	public void update(float dt) {
+		setPosition((playerBody.getPosition().x - getWidth() / 2), (playerBody.getPosition().y - getHeight() / 2));
+	}
+
+	public void definePlayer() {
+		BodyDef bdef = new BodyDef();
+		bdef.position.set(
+				(EnterPortalTileObject.getEllipse().x + EnterPortalTileObject.getEllipse().width / 2)
+						/ GravitySpikesRevamped.PPM,
+				(EnterPortalTileObject.getEllipse().y + EnterPortalTileObject.getEllipse().height / 2)
+						/ GravitySpikesRevamped.PPM);
+
+		bdef.type = BodyDef.BodyType.DynamicBody;
+		playerBody = world.createBody(bdef);
+		FixtureDef fdef = new FixtureDef();
+		CircleShape circleBody = new CircleShape();
+		circleBody.setRadius(32 / GravitySpikesRevamped.PPM);
+		fdef.shape = circleBody;
+
+		playerBody.createFixture(fdef).setUserData("circleBody");
+	}
+}

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="25" height="40" tilewidth="128" tileheight="128" nextobjectid="188">
+ <tileset firstgid="1" name="GTile" tilewidth="128" tileheight="128" tilecount="64" columns="8">
+  <image source="../GTileSheet.png" width="1024" height="1024"/>
+ </tileset>
+ <layer name="Background" width="25" height="40">
+  <data encoding="base64" compression="zlib">
+   eJztw0ENAAAMA6HzUv8eJ2MfSFg1VVVV9fUBfTOIuQ==
+  </data>
+ </layer>
+ <layer name="Main" width="25" height="40">
+  <data encoding="base64" compression="zlib">
+   eJzdVjEOwyAMpBsLU8ZKGao+Iv9/WVMJS9bJNmcSOvSkU1uMfcZg6LOU8lzIDVg7xb6fPPpYO/nqn0e31QkNwd7JQPLa1XetjRqbHWYKkqelobXu0Iw0ZH+seVdjyxqrml+BsxoY10NL5GvVhAFqVFKDheejzy+jEdmZPfF0MCfspyys+q3AVQ1mT6UGVzR0LaM4aFtRt9E67tg37Yu99YWcMX0HZLVGGtH8TPzMPe7VzorF9nukoXvTqieeOS+PSCOCt0bt6515tqcYjWL8tsZHdlYD4+i64305usfx/06295j4ng9T+9kzcqfdm6PfKs8evV933HUj/EID3/VVmNHI5qPXotEKd8+z87IaOJ7RGLEZZH0zXB1f+Jj0e/8JP3I6Jv8=
+  </data>
+ </layer>
+ <objectgroup name="Ground">
+  <object id="3" x="0" y="4480" width="1152" height="384"/>
+  <object id="4" x="1792" y="4480" width="1408" height="384"/>
+  <object id="5" x="1664" y="4608" width="128" height="256"/>
+  <object id="6" x="1536" y="4736" width="128" height="128"/>
+  <object id="7" x="1152" y="4608" width="128" height="256"/>
+  <object id="8" x="1280" y="4736" width="128" height="128"/>
+  <object id="9" x="1408" y="4096" width="128" height="128"/>
+  <object id="10" x="0" y="0" width="128" height="4480"/>
+  <object id="11" x="3072" y="0" width="128" height="4480"/>
+  <object id="12" x="2944" y="3200" width="128" height="896"/>
+  <object id="13" x="2816" y="3456" width="128" height="384"/>
+  <object id="14" x="1792" y="3456" width="256" height="128"/>
+  <object id="15" x="768" y="3456" width="384" height="128"/>
+  <object id="16" x="1536" y="2176" width="128" height="896"/>
+  <object id="17" x="1664" y="2432" width="128" height="640"/>
+  <object id="18" x="2176" y="2432" width="384" height="128"/>
+  <object id="19" x="1408" y="2304" width="128" height="512"/>
+  <object id="20" x="128" y="2560" width="128" height="768"/>
+  <object id="21" x="256" y="2560" width="128" height="640"/>
+  <object id="22" x="256" y="2432" width="128" height="128"/>
+  <object id="23" x="384" y="2688" width="128" height="512"/>
+  <object id="24" x="384" y="1920" width="128" height="128"/>
+  <object id="25" x="1920" y="1664" width="128" height="128"/>
+  <object id="26" x="2816" y="640" width="256" height="1024"/>
+  <object id="27" x="2688" y="896" width="128" height="512"/>
+  <object id="28" x="2560" y="896" width="128" height="384"/>
+  <object id="29" x="2304" y="1024" width="256" height="128"/>
+  <object id="31" x="1536" y="0" width="1536" height="128"/>
+  <object id="32" x="2048" y="128" width="1024" height="128"/>
+  <object id="33" x="2816" y="256" width="256" height="128"/>
+  <object id="34" x="128" y="0" width="1280" height="128"/>
+  <object id="35" x="128" y="128" width="256" height="128"/>
+  <object id="36" x="640" y="128" width="256" height="128"/>
+  <object id="37" x="128" y="256" width="256" height="640"/>
+  <object id="38" x="384" y="512" width="384" height="256"/>
+  <object id="39" x="768" y="640" width="128" height="128"/>
+  <object id="40" x="384" y="768" width="128" height="128"/>
+  <object id="41" x="384" y="384" width="128" height="128"/>
+  <object id="42" x="128" y="896" width="128" height="128"/>
+  <object id="43" x="1280" y="640" width="384" height="128"/>
+  <object id="44" x="512" y="1280" width="384" height="128"/>
+  <object id="45" x="1408" y="1152" width="384" height="128"/>
+  <object id="46" x="896" y="2048" width="512" height="128"/>
+  <object id="114" x="-8.33333" y="4850" width="3208.33" height="275"/>
+  <object id="143" x="2048" y="1660" width="128" height="128"/>
+  <object id="148" x="1924" y="2944" width="120" height="124"/>
+  <object id="149" x="896" y="512" width="124" height="124"/>
+  <object id="152" x="1408" y="0" width="128" height="128"/>
+  <object id="154" x="2048" y="3328" width="128" height="256"/>
+  <object id="155" x="2176" y="3328" width="256" height="128"/>
+  <object id="156" x="2304" y="3200" width="256" height="128"/>
+  <object id="158" x="2432" y="3072" width="256" height="128"/>
+  <object id="159" x="2560" y="2944" width="256" height="128"/>
+  <object id="160" x="2688" y="2432" width="128" height="512"/>
+  <object id="161" x="2816" y="2432" width="256" height="128"/>
+  <object id="162" x="2944" y="2304" width="128" height="128"/>
+  <object id="168" x="768" y="2560" width="128" height="896"/>
+  <object id="169" x="896" y="2816" width="128" height="640"/>
+  <object id="170" x="1024" y="3072" width="128" height="384"/>
+  <object id="171" x="640" y="2688" width="128" height="128"/>
+  <object id="172" x="896" y="1280" width="256" height="128"/>
+  <object id="174" x="1152" y="640" width="128" height="128"/>
+  <object id="176" x="1664" y="1664" width="256" height="128"/>
+  <object id="178" x="1664" y="1792" width="128" height="128"/>
+  <object id="180" x="1792" y="2432" width="128" height="128"/>
+  <object id="182" x="2176" y="1664" width="128" height="256"/>
+  <object id="183" x="2304" y="1792" width="128" height="128"/>
+  <object id="184" x="2048" y="896" width="512" height="128"/>
+  <object id="185" x="2176" y="1024" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup name="Spikes">
+  <object id="115" x="384" y="128" width="248" height="76"/>
+  <object id="116" x="632" y="204"/>
+  <object id="117" x="668" y="256" width="208" height="88"/>
+  <object id="118" x="892" y="128" width="360" height="84"/>
+  <object id="119" x="1684" y="124" width="364" height="92"/>
+  <object id="120" x="2076" y="260" width="740" height="80"/>
+  <object id="121" x="2840" y="384" width="232" height="100"/>
+  <object id="122" x="2332" y="1152" width="220" height="96"/>
+  <object id="123" x="2572" y="1284" width="116" height="92"/>
+  <object id="125" x="2712" y="1412" width="84" height="88"/>
+  <object id="126" x="2840" y="1664" width="204" height="96"/>
+  <object id="127" x="1432" y="1280" width="332" height="88"/>
+  <object id="128" x="536" y="1412" width="336" height="88"/>
+  <object id="129" x="916" y="2172" width="472" height="92"/>
+  <object id="130" x="2188" y="2564" width="352" height="92"/>
+  <object id="131" x="1548" y="3072" width="220" height="92"/>
+  <object id="132" x="1424" y="2816" width="92" height="96"/>
+  <object id="133" x="792" y="3588" width="336" height="88"/>
+  <object id="134" x="260" y="3196" width="232" height="96"/>
+  <object id="135" x="132" y="3328" width="104" height="96"/>
+  <object id="136" x="1812" y="3584" width="216" height="96"/>
+  <object id="137" x="2828" y="3840" width="112" height="96"/>
+  <object id="138" x="2960" y="4092" width="108" height="100"/>
+  <object id="139" x="1304" y="768" width="336" height="92"/>
+  <object id="140" x="516" y="764" width="352" height="96"/>
+  <object id="141" x="264" y="896" width="220" height="96"/>
+  <object id="142" x="152" y="1024" width="76" height="92"/>
+  <object id="145" x="2076" y="1788" width="76" height="88"/>
+  <object id="146" x="1944" y="3072" width="76" height="88"/>
+  <object id="150" x="924" y="640" width="68" height="88"/>
+  <object id="151" x="1956" y="1792" width="60" height="84"/>
+  <object id="166" x="2848" y="2560" width="192" height="96"/>
+  <object id="167" x="672" y="2816" width="64" height="96"/>
+  <object id="173" x="928" y="1408" width="192" height="96"/>
+  <object id="175" x="1184" y="768" width="64" height="96"/>
+  <object id="179" x="1824" y="1792" width="64" height="96"/>
+  <object id="181" x="1824" y="2560" width="64" height="96"/>
+  <object id="186" x="2080" y="1024" width="64" height="96"/>
+  <object id="187" x="2208" y="1152" width="64" height="96"/>
+ </objectgroup>
+ <objectgroup name="EnterPortal">
+  <object id="47" x="1408" y="4736" width="128" height="128">
+   <ellipse/>
+  </object>
+ </objectgroup>
+ <objectgroup name="ExitPortal">
+  <object id="153" x="1440" y="128" width="64" height="128">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>

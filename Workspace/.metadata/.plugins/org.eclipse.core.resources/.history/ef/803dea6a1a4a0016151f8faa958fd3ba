@@ -1,0 +1,5 @@
+package com.caleb.entities;
+
+public abstract class EnterPortalTileObject {
+
+}
